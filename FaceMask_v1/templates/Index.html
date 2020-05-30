@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en">
+{% load static %}
+<meta charset="UTF-8">
+<title>Image Upload</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+<body>
+
+  <div class="container animated bounce">
+    <form id="form1" action="/upload/" method="POST" enctype="multipart/form-data" runat="server">
+      {%csrf_token%}
+      <div class="alert"></div>
+      <div id='img_container'><img id="preview" src="https://webdevtrick.com/wp-content/uploads/preview-img.jpg"
+          alt="your image" title='' /></div>
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" id="inputGroupFile01" class="imgInp custom-file-input"
+            aria-describedby="inputGroupFileAddon01" name="imgFile">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="{% static './js/function.js' %}"></script>
+</body>
+
+</html>

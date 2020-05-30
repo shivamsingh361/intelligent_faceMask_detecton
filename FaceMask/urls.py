@@ -20,4 +20,5 @@ import FaceMask_v1.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('upload/', views.processing, name='processing'),
 ]
